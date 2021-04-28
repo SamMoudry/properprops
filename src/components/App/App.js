@@ -4,6 +4,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import GuestList from '../GuestList/GuestList';
+import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -102,24 +103,8 @@ function App() {
         <button type="submit">Add Guest</button>
       </form>
       <GuestList list={guestList} />
-      {/* <h2>Guest List</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Kid's Meal</th>
-          </tr>
-        </thead>
-        <tbody>
-          {guestList.map(guest => (
-            <tr key={guest.id}>
-              <td>{guest.name}</td>
-              <td>{String(guest.kidsMeal)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table> */}
-      <h2>Dinner Supplies</h2>
+      <DinnerSupplies list={guestList} />
+      {/* <h2>Dinner Supplies</h2>
       <div>
         Spoons: {guestList.length * 2}
       </div>
@@ -128,7 +113,7 @@ function App() {
       </div>
       <div>
         Knives: {guestList.length * 2}
-      </div>
+      </div> */}
       <Footer />
     </div>
   );
