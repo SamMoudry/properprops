@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import GuestList from '../GuestList/GuestList';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -56,9 +57,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <header>
-        <h1>Prim Proper Props</h1>
-      </header> */}
       <h2>Party Leader</h2>
       {guestList[0] && <h3>{guestList[0].name}</h3>}
       <h2>Add a new guest</h2>
@@ -103,7 +101,8 @@ function App() {
         </div>
         <button type="submit">Add Guest</button>
       </form>
-      <h2>Guest List</h2>
+      <GuestList list={guestList} />
+      {/* <h2>Guest List</h2>
       <table>
         <thead>
           <tr>
@@ -119,7 +118,7 @@ function App() {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
       <h2>Dinner Supplies</h2>
       <div>
         Spoons: {guestList.length * 2}
@@ -131,10 +130,6 @@ function App() {
         Knives: {guestList.length * 2}
       </div>
       <Footer />
-      {/* <footer>
-        <h3>Have fun!</h3>
-        <p>Don't forget to mind your Ps and Qs!</p>
-      </footer> */}
     </div>
   );
 }
